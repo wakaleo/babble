@@ -4,7 +4,7 @@
   <groupId>com.sonatype.training</groupId>
   <artifactId>babble</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.3</version>
+  <version>1.0.4-SNAPSHOT</version>
   <name>babble</name>
   <url>http://www.sonatype.com</url>
   <description>Babble - the art of meaningless utterences</description>
