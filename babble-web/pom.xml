@@ -3,14 +3,14 @@
   <parent>
     <artifactId>babble</artifactId>
     <groupId>com.sonatype.training</groupId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sonatype.training</groupId>
   <artifactId>babble-web</artifactId>
   <packaging>war</packaging>
   <name>babble web application</name>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
   <build>
     <finalName>babble-web</finalName>
@@ -36,7 +36,7 @@
       <groupId>com.sonatype.training.babble
       </groupId>
       <artifactId>babble-services</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.0-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>javax.servlet</groupId>
