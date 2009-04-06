@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Maven">
+    <!--
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-stylus-skin</artifactId>
+        <version>1.1</version>
+    </skin>
+    -->
+  <bannerLeft>
+    <name>Sonatype</name>
+    <src>images/logo.gif</src>
+    <href>http://www.sonatype.com</href>
+  </bannerLeft>
+  <body>
+    <links>
+      <item name="Apache" href="http://www.apache.org/" />
+      <item name="Maven 1.0" href="http://maven.apache.org/"/>
+      <item name="Maven 2" href="http://maven.apache.org/maven2/"/>
+    </links>
+    <menu name="Getting started">
+        <item name="Home" href="index.html"/>
+        <item name="Installing the project" href="install.html"/>
+      <item name="FAQ" href="faq.html"/>
+    </menu>
+   <menu name="Architecture and design">
+      <item name="High-level architecture" href="architecture.html"/>
+      <item name="Design notes" href="design.html"/>
+    </menu>
+    <menu ref="reports" />
+
+  </body>
+</project>

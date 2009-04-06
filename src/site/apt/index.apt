@@ -1,0 +1,62 @@
+ -----
+ The Site
+ -----
+ The Maven Team
+ -----
+
+Section title
+
+  Sections are created by inserting section titles into the document. Simple
+  documents need not contain sections.
+
+* Sub-section title
+
+  Section titles are not indented. A sub-section title begins with one
+  asterisk (<<<*>>>), a sub-sub-section title begins with two asterisks
+  (<<<**>>>), and so forth up to four sub-section levels.
+
+** Sub-sub-section title
+
+  This is a sub-sub-section.
+
+*** Sub-sub-sub-section title
+
+  And so forth
+
+  You can configure this class in Spring as follows:
+
+-----------------------
+
+  <bean id="taxCalculator" class="com.sonatype.training.TaxCalculatorImpl">
+     ...
+  </bean>
+-----------------------
+
+
+      * List item 1.
+
+      * List item 2.
+
+	Paragraph contained in list item 2.
+
+	    * Sub-list item 1.
+
+	    * Sub-list item 2.
+
+      * List item 3.
+
+
+** Tables
+
+*-----------+-----------+
+|| Header 1 || Header 2 |
+*-----------+-----------+
+| Cell 1    | Cell 2    |
+*-----------+-----------+
+Caption
+
+
+** Images
+
+[images/logo.gif] Company logo
+  
