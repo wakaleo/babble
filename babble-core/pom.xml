@@ -4,11 +4,11 @@
   <parent>
     <artifactId>babble</artifactId>
     <groupId>com.sonatype.training</groupId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
   <artifactId>babble-core</artifactId>
   <name>babble-core</name>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <url>http://maven.apache.org</url>
   <dependencies>
   </dependencies>

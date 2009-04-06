@@ -3,19 +3,19 @@
   <parent>
     <artifactId>babble</artifactId>
     <groupId>com.sonatype.training</groupId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>                                                                    
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sonatype.training.babble</groupId>
   <artifactId>babble-services</artifactId>
   <name>babble-services</name>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>com.sonatype.training</groupId>
       <artifactId>babble-core</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.1</version>
     </dependency>
   </dependencies>
 </project>
