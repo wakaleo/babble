@@ -9,7 +9,12 @@ package com.sonatype.training.babble.services;
  */
 public class NameAlreadyExistsException extends Exception {
 
-    public NameAlreadyExistsException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public NameAlreadyExistsException() {
         super();
     }
 

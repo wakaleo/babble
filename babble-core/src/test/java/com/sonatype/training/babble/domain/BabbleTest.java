@@ -5,8 +5,6 @@
 
 package com.sonatype.training.babble.domain;
 
-import java.util.List;
-import org.hamcrest.Matcher;
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
