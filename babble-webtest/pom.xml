@@ -107,7 +107,7 @@
   </build>
 
   <properties>
-    <jetty.port>8080</jetty.port>
+    <jetty.port>9091</jetty.port>
     <target.browser>*firefox</target.browser>
     <integration.tests>
       **/*WebTest.java, **/*IntegrationTest.java
@@ -119,14 +119,14 @@
     <profile>
       <id>firefox</id>
       <properties>
-        <jetty.port>9090</jetty.port>
+        <jetty.port>9092</jetty.port>
         <target.browser>*firefox</target.browser>
       </properties>
     </profile>
     <profile>
       <id>ie</id>
       <properties>
-        <jetty.port>9091</jetty.port>
+        <jetty.port>9093</jetty.port>
         <target.browser>*ie</target.browser>
       </properties>
     </profile>
