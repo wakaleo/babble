@@ -6,28 +6,28 @@ public class LoginWebTest extends BaseStory {
 
     @Test
 	public void testHomePageShouldDisplayTitle() throws Exception {
-        selenium.open("/babble-webtest/");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Babble - meaningless utterances!");
+        browser.open("/babble-webtest/");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Babble - meaningless utterances!");
 	}
 
     @Test
 	public void testUserLogsInByEnteringUserName() throws Exception {
-        selenium.open("/babble-webtest/");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Login!");
-        selenium.type("username", "jack");
-        selenium.click("action");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Hi jack! Say something meaningless");
+        browser.open("/babble-webtest/");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Login!");
+        browser.type("username", "jack");
+        browser.click("action");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Hi jack! Say something meaningless");
 	}
 
     @Test
 	public void testUserCanLogOff() throws Exception {
         userLogsOn("Jack");
-        selenium.click("//input[@name='action' and @value='logout']");               
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Login!");
+        browser.click("//input[@name='action' and @value='logout']");               
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Login!");
 	}
 
 

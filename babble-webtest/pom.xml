@@ -108,6 +108,7 @@
 
   <properties>
     <jetty.port>9091</jetty.port>
+    <selenium.port>4444</selenium.port>
     <target.browser>*firefox</target.browser>
     <integration.tests>
       **/*WebTest.java, **/*IntegrationTest.java

@@ -7,30 +7,30 @@ public class PostMessageWebTest extends BaseStory {
     @Test
 	public void testUserLogsInAndEntersAMessage() throws Exception {
     	userLogsOn("jack");
-        selenium.click("//input[@name='action' and @value='babble']");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Hi jack! Say something meaningless");
-        selenium.type("message", "Hi there!");
-        selenium.isTextPresent("jack: Hi there!");
-        selenium.click("//input[@name='action' and @value='logout']");               
+        browser.click("//input[@name='action' and @value='babble']");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Hi jack! Say something meaningless");
+        browser.type("message", "Hi there!");
+        browser.isTextPresent("jack: Hi there!");
+        browser.click("//input[@name='action' and @value='logout']");               
 	}    
 
     @Test
 	public void testMultipleUsersLogsInAndEnterMessages() throws Exception {
     	userLogsOn("jack");
-        selenium.click("//input[@name='action' and @value='babble']");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Hi jack! Say something meaningless");
-        selenium.type("message", "Hi there!");
-        selenium.isTextPresent("jack: Hi there!");
-        selenium.click("//input[@name='action' and @value='logout']");               
+        browser.click("//input[@name='action' and @value='babble']");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Hi jack! Say something meaningless");
+        browser.type("message", "Hi there!");
+        browser.isTextPresent("jack: Hi there!");
+        browser.click("//input[@name='action' and @value='logout']");               
     	userLogsOn("jill");
-        selenium.click("//input[@name='action' and @value='babble']");
-        selenium.waitForPageToLoad("10000");
-        selenium.isTextPresent("Hi jill! Say something meaningless");
-        selenium.type("message", "Hi Jack!");
-        selenium.isTextPresent("jack: Hi there!");
-        selenium.isTextPresent("jill: Hi Jack!");
-        selenium.click("//input[@name='action' and @value='logout']");               
+        browser.click("//input[@name='action' and @value='babble']");
+        browser.waitForPageToLoad("10000");
+        browser.isTextPresent("Hi jill! Say something meaningless");
+        browser.type("message", "Hi Jack!");
+        browser.isTextPresent("jack: Hi there!");
+        browser.isTextPresent("jill: Hi Jack!");
+        browser.click("//input[@name='action' and @value='logout']");               
 	}    
 }
