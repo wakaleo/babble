@@ -27,7 +27,7 @@
     <mysql.version>5.1.6</mysql.version>
     <log4j.level>DEBUG</log4j.level>   
     <enterprise.repository>http://wanaka.local:8081/nexus/content/repositories</enterprise.repository>
-    <jetty.port>8080</jetty.port>
+    <jetty.port>9090</jetty.port>
   </properties>
  
   <dependencyManagement>
