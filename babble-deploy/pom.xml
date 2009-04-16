@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>babble</artifactId>
+    <groupId>com.wakaleo.training.babble
+    </groupId>
+    <version>1.0.6-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wakaleo.training.babble</groupId>
+  <artifactId>babble-deploy</artifactId>
+  <packaging>war</packaging>
+  <name>babble-deploy</name>
+  <version>1.0.6-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.wakaleo.training.babble
+      </groupId>
+      <artifactId>babble-web</artifactId>
+      <version>${webapp.version}</version>
+      <type>war</type>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <warName>babble-web</warName>
+          <overlays>
+            <overlay>
+              <groupId>com.wakaleo.training.babble</groupId>
+              <artifactId>babble-web</artifactId>
+              <excludes>
+                <exclude>WEB-INF/classes/config.properties</exclude>
+              </excludes>
+            </overlay>
+          </overlays>
+          <webResources>
+            <resource>
+              <directory>${patch.path}</directory>
+              <filtering>false</filtering>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <target.version>${project.version}</target.version>
+  </properties>
+  
+  <profiles>
+    <!-- Profile :: Development -->
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <patch.path>src/main/patches/dev</patch.path>
+        <webapp.version>${project.version}</webapp.version>
+      </properties>
+    </profile>
+
+    <!-- Profile :: Staging -->
+    <profile>
+      <id>staging</id>
+      <properties>
+        <patch.path>src/main/patches/staging</patch.path>
+        <webapp.version>${target.version}</webapp.version>
+      </properties>
+    </profile>
+
+    <!-- Profile :: Production -->
+    <profile>
+      <id>production</id>
+      <properties>
+        <patch.path>src/main/patches/production</patch.path>
+        <webapp.version>${target.version}</webapp.version>
+      </properties>
+    </profile>
+
+  </profiles>
+</project>
