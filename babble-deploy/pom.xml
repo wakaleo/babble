@@ -4,14 +4,14 @@
     <artifactId>babble</artifactId>
     <groupId>com.wakaleo.training.babble
     </groupId>
-    <version>1.0.10-SNAPSHOTT</version>
+    <version>1.0.10-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wakaleo.training.babble</groupId>
   <artifactId>babble-deploy</artifactId>
   <packaging>war</packaging>
   <name>babble-deploy</name>
-  <version1.0.10-SNAPSHOTOT</version>
+  <version>1.0.10-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.wakaleo.training.babble

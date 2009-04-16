@@ -4,19 +4,20 @@
     <artifactId>babble</artifactId>
     <groupId>com.wakaleo.training.babble
     </groupId>
-    <version>1.0.10-SNAPSHOT0-SNAPSHOT</version>
+    <version>1.0.10-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wakaleo.training.babble</groupId>
   <artifactId>babble-webtest</artifactId>
   <packaging>war</packaging>
   <name>babble-webtest</name>
- 1.0.10-SNAPSHOTsion>1.0.10-SNAPSHOT</version>
+  <version>1.0.10-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.wakaleo.training.babble
       </groupId>
-      <artifactId>babble-web</artifac1.0.10-SNAPSHOT      <version>1.0.10-SNAPSHOT</version>
+      <artifactId>babble-web</artifactId>
+      <version>1.0.10-SNAPSHOT</version>
       <type>war</type>
       <scope>runtime</scope>
     </dependency>
