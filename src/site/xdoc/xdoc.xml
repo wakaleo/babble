@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<document>
+  <properties>
+    <title>Welcome</title>
+    <author email="dev@maven.apache.org">The Maven Team</author>
+  </properties>
+  <body>
+
+    <!-- The body of the document contains a number of sections -->
+    <section name="section 1">
+
+      <p>Hi!</p>
+
+      <subsection name="subsection 1">
+        <p>Subsection text...</p>
+      </subsection>
+    </section>
+
+    <section name="other section">
+      <source>
+          public class Foo {
+              private int bar;
+
+              public Foo() {
+              }
+          }
+      </source>
+    </section>
+
+  </body>
+
+</document>
+
+
+

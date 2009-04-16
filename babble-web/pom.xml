@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>babble</artifactId>
+    <groupId>com.wakaleo.training.babble</groupId>
+    <version>1.0.8</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>babble-web</artifactId>
+  <packaging>war</packaging>
+  <name>babble web application</name>
+  <version>1.0.8</version>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <finalName>babble-web</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.wakaleo.training.babble</groupId>
+      <artifactId>babble-services</artifactId>
+      <version>1.0.8</version>
+    </dependency>
+    <dependency>
+     	<groupId>javax.servlet</groupId> 
+    	<artifactId>jstl</artifactId>
+    </dependency>
+  </dependencies>
+</project>

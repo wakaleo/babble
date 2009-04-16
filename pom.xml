@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wakaleo.training.babble</groupId>
+  <artifactId>babble</artifactId>
+  <packaging>pom</packaging>
+  <name>babble</name>
+  <version>1.0.8</version>
+  
+  <url>http://www.wakaleo.com</url>
+  <description>Babble - the art of meaningless utterences</description>
+  <scm>
+    <connection>scm:git:git://github.com/wakaleo/babble.git</connection>
+    <developerConnection>scm:git:git://github.com/wakaleo/babble.git</developerConnection>
+  </scm>
+  <issueManagement>
+    <system>trac</system>
+    <url>http://devserver.mycompany.com/trac/myapp</url>
+  </issueManagement>
+  <inceptionYear>2009</inceptionYear>
+
+  <properties>
+    <jdk.version>1.5</jdk.version>
+    <junit.version>4.5</junit.version>
+    <jstl.version>1.2</jstl.version>
+    <mysql.version>5.1.6</mysql.version>
+    <log4j.level>DEBUG</log4j.level>   
+    <enterprise.repository>http://localhost:8081/nexus/content/repositories</enterprise.repository>
+    <jetty.port>9090</jetty.port>
+  </properties>
+ 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>jstl</artifactId>
+    	<version>${jstl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+      <!-- Selenium -->
+      <dependency>
+         <groupId>org.openqa.selenium.client-drivers</groupId>
+         <artifactId>selenium-java-client-driver</artifactId>
+         <version>1.0-beta-1</version>
+         <scope>test</scope>
+      </dependency>      
+    </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.12</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources> 
+    <pluginManagement>
+      <plugins>
+        <!-- Compiler configuration is shared by child modules -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>${jdk.version}</source>
+            <target>${jdk.version}</target>
+          </configuration>
+        </plugin>
+        
+        <!-- Release plugin is potentially shared by child modules -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <preparationGoals>clean verify install</preparationGoals>
+          </configuration>
+        </plugin>
+        
+        <!-- Jetty plugin is used by several child modules -->
+       <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+        <version>6.1.10</version>
+        <configuration>
+          <scanIntervalSeconds>10</scanIntervalSeconds>
+          <stopKey>foo</stopKey>
+          <stopPort>9999</stopPort>
+          <connectors>
+            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+              <port>${jetty.port}</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>          
+        </configuration>
+      </plugin>    
+        
+      </plugins>
+    </pluginManagement>
+    <plugins>
+     <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>1.0-beta-1</version>       
+        <executions>
+          <execution>
+            <id>enforce-java</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>2.1.0</version>
+                </requireMavenVersion>
+                <requireJavaVersion>
+                  <version>1.5.0</version>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+        </executions> 
+      </plugin>
+    </plugins>
+  </build>
+ 
+  <reporting>
+  
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <source>1.5</source>
+          <doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+          <docletArtifact>
+            <groupId>gr.spinellis</groupId>
+            <artifactId>UmlGraph</artifactId>
+            <version>4.6</version>
+          </docletArtifact>
+          <additionalparam>
+            -inferrel -inferdep -hide java.*
+            -collpackages
+            java.util.* -attributes -operations
+            -enumerations -enumconstants
+                    </additionalparam>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <configLocation>config/maven_checks.xml</configLocation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <targetJdk>1.5</targetJdk>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+  
+  <modules>
+    <module>babble-core</module>
+    <module>babble-services</module>
+    <module>babble-web</module>
+    <module>babble-webtest</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>local-releases</id>
+      <name>Internal Releases</name>
+      <url>${enterprise.repository}/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>local-snapshots</id>
+      <name>Internal Snapshots</name>
+      <url>${enterprise.repository}/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <profiles>
+    <!-- Development environment -->
+    <profile>
+      <id>development</id>
+      <properties>
+        <log4j.level>DEBUG</log4j.level>
+      </properties>
+    </profile>
+    <profile>
+      <id>production</id>
+      <properties>
+        <log4j.level>WARN</log4j.level>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
