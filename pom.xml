@@ -5,7 +5,7 @@
   <artifactId>babble</artifactId>
   <packaging>pom</packaging>
   <name>babble</name>
-  <version>1.0.10-SNAPSHOT</version>
+  <version>1.0.10</version>
   
   <url>http://www.wakaleo.com</url>
   <description>Babble - the art of meaningless utterences</description>
