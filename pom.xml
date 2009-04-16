@@ -5,7 +5,7 @@
   <artifactId>babble</artifactId>
   <packaging>pom</packaging>
   <name>babble</name>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.6-SNAPSHOT</version>
   
   <url>http://www.wakaleo.com</url>
   <description>Babble - the art of meaningless utterences</description>
@@ -25,7 +25,7 @@
     <jstl.version>1.2</jstl.version>
     <mysql.version>5.1.6</mysql.version>
     <log4j.level>DEBUG</log4j.level>   
-    <enterprise.repository>http://wanaka.local:8081/nexus/content/repositories</enterprise.repository>
+    <enterprise.repository>http://localhost:8081/nexus/content/repositories</enterprise.repository>
     <jetty.port>9090</jetty.port>
   </properties>
  
@@ -216,9 +216,9 @@
 
   <distributionManagement>
     <repository>
-      <id>releases</id>
+      <id>local-releases</id>
       <name>Internal Releases</name>
-      <url>${enterprise.repository}/releases/</url>
+      <url>${enterprise.repository}/releases</url>
     </repository>
     <snapshotRepository>
       <id>local-snapshots</id>
