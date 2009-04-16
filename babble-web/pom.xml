@@ -3,13 +3,13 @@
   <parent>
     <artifactId>babble</artifactId>
     <groupId>com.wakaleo.training.babble</groupId>
-    <version>1.0.8</version>
+    <version>1.0.10-SNAPSHOT0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>babble-web</artifactId>
   <packaging>war</packaging>
   <name>babble web application</name>
-  <version>1.0.8</version>
+ 1.0.10-SNAPSHOTsion>1.0.10-SNAPSHOT</version>
   <build>
     <resources>
       <resource>
@@ -29,8 +29,7 @@
   <dependencies>
     <dependency>
       <groupId>com.wakaleo.training.babble</groupId>
-      <artifactId>babble-services</artifactId>
-      <version>1.0.8</version>
+      <artifactId>babble-services</artifac1.0.10-SNAPSHOT      <version>1.0.10-SNAPSHOT</version>
     </dependency>
     <dependency>
      	<groupId>javax.servlet</groupId> 
