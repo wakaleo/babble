@@ -4,9 +4,9 @@
   <parent>
     <artifactId>babble</artifactId>
     <groupId>com.wakaleo.training.babble</groupId>
-    <version>1.0.14-SNAPSHOT</version>
+    <version>1.0.14</version>
   </parent>
   <artifactId>babble-core</artifactId>
-  <version>1.0.14-SNAPSHOT</version>
+  <version>1.0.14</version>
   <name>babble-core</name>
 </project>
