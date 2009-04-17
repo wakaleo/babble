@@ -41,6 +41,9 @@ if ("babble".equals(action)) {
 %>
 
 <html>
+<head>
+<title><f:message key="app.title"/></title>
+</head>
 <body>
 <h2><f:message key="app.title"/></h2>
 <p><em>Version <f:message key="app.version"/></em></p>
