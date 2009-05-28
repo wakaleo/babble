@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>babble</artifactId>
+		<groupId>com.wakaleo.training.babble
+    </groupId>
+		<version>1.0.21-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.wakaleo.training.babble</groupId>
+	<artifactId>babble-webtest</artifactId>
+	<packaging>jar</packaging>
+	<name>babble-webtest</name>
+	<version>1.0.21-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.openqa.selenium.client-drivers</groupId>
+			<artifactId>selenium-java-client-driver</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy.maven</groupId>
+			<artifactId>gmaven</artifactId>
+			<version>1.0-rc-5</version>
+			<type>pom</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>selenium-maven-plugin</artifactId>
+				<version>1.0-rc-1</version>
+				<executions>
+					<execution>
+						<id>xvfb</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>xvfb</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>start-selenium</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start-server</goal>
+						</goals>
+						<configuration>
+							<background>true</background>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins </groupId>
+				<artifactId>maven-surefire-plugin </artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+				<executions>
+					<execution>
+					    <id>run-integration-tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<forkMode>never</forkMode>
+							<includes>
+							  <include>${integration.tests}</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<server.port>9090</server.port>
+		<port>4444</port>
+		<target.browser>*firefox</target.browser>
+		<integration.tests>**/*Test.java</integration.tests>
+	</properties>
+
+</project>
