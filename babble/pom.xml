@@ -23,7 +23,7 @@
     <jdk.version>1.5</jdk.version>
     <junit.version>4.5</junit.version>
     <jstl.version>1.2</jstl.version>
-    <mysql.version>5.1.6</mysql.version>
+    <mysql.version>8.0.28</mysql.version>
     <log4j.level>DEBUG</log4j.level>
     <enterprise.repository>http://localhost:8081/nexus/content/repositories</enterprise.repository>
     <jetty.port>9090</jetty.port>
